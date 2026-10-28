@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Estudo de Eletrotécnica</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<div class="scene" aria-hidden="true">
+<svg viewBox="0 0 800 150" preserveAspectRatio="xMidYMid meet">
+<circle class="mn" cx="560" cy="22" r="10"/>
+<path class="gd" d="M0 147 H800"/>
+<path class="w" d="M-20 32 Q40 60 86 32 M-20 20 Q45 50 110 20"/>
+<path class="w" d="M134 32 Q260 88 386 32 M110 20 Q260 74 410 20"/>
+<path class="w" d="M434 32 Q560 88 686 32 M410 20 Q560 74 710 20"/>
+<path class="w" d="M734 32 Q780 60 840 32 M710 20 Q775 50 840 20"/>
+<g class="tw" transform="translate(110 0)"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M-26 148 L0 40 L26 148 M-15 100 H15 M-10 72 H10 M-21 124 H21 M-12 100 L12 124 M12 100 L-12 124 M0 40 V20 M-24 32 H24"/></g>
+<g class="tw" transform="translate(410 0)"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M-26 148 L0 40 L26 148 M-15 100 H15 M-10 72 H10 M-21 124 H21 M-12 100 L12 124 M12 100 L-12 124 M0 40 V20 M-24 32 H24"/></g>
+<g class="tw" transform="translate(710 0)"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M-26 148 L0 40 L26 148 M-15 100 H15 M-10 72 H10 M-21 124 H21 M-12 100 L12 124 M12 100 L-12 124 M0 40 V20 M-24 32 H24"/></g>
+</svg>
+</div>
+<h1>⚡ Estudo de Eletrotécnica</h1>
+<p class="sub">Escolha um assunto, resolva o problema etapa por etapa e, no final, veja o circuito e o gráfico.</p>
+
+<div id="menu"></div>
+
+<div id="game" hidden>
+<button class="btn alt" id="back" type="button" style="margin:0 0 12px">← Assuntos</button>
+<section>
+<h2 id="pt"></h2>
+<p id="ptx"></p>
+<canvas id="c1" aria-label="Desenho do circuito" role="img"></canvas>
+<p class="note" id="chint" hidden>👆 Circuito funcionando: toque na chave para ligar ou desligar, e nos componentes para ver os dados.</p>
+<p class="fb good" id="cinfo"></p>
+<div id="steps"></div>
+</section>
+<section id="res" hidden>
+<h2>Resultado</h2>
+<div class="final" id="sum"></div>
+<canvas id="c2" aria-label="Representação gráfica da resposta" role="img" style="margin-top:12px"></canvas>
+<p class="note" id="leg"></p>
+<button class="btn" id="again" type="button">Outro problema</button>
+<button class="btn alt" id="menu2" type="button">Assuntos</button>
+</section>
+</div>
+
+<div id="lbgame" hidden>
+<button class="btn alt" id="lbback" type="button" style="margin:0 0 12px">← Voltar ao menu</button>
+<section>
+<h2 id="lbpt"></h2>
+<p id="lbptx"></p>
+<canvas id="lbcv" role="img" aria-label="Circuito animado"></canvas>
+<p class="fb good" id="lbinfo"></p>
+<div id="lblab" hidden>
+<label>Tensão da fonte: <b id="lbvl"></b><input id="lbvs" type="range" min="10" max="200" value="100"></label>
+<div class="tools"><button class="btn" id="lbagain" type="button" style="margin:0">Outro problema</button><button class="btn alt" id="lbmenu2" type="button" style="margin:0">Voltar ao menu</button></div>
+</div>
+</section>
+<section id="lbsteps"></section>
+</div>
+
+<section>
+<details><summary>Como funciona</summary>
+<div>Você faz as contas na folha e digita só a resposta de cada etapa. Se acertar, a próxima etapa aparece. Cada etapa tem uma dica escondida: toque na setinha para abrir. Números complexos podem ser digitados como <b>30+j40</b> ou <b>50∠53,1°</b>. Os valores mudam a cada problema.</div>
+</details>
+<button id="theme" type="button" style="margin-top:10px;padding:8px 14px;font:inherit;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:6px;cursor:pointer">Alternar tema</button>
+</section>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
